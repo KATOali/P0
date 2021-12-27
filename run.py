@@ -55,13 +55,13 @@ if cookie:
                         for i in range(len(listid)):
                             getstory = config.igfunc.json.loads(config.igfunc.get_request(1,useragent,'feed/user/'+str(listid[i])+'/story/',cookie).text)
                             for storyitem in getstory["reel"]["items"]:
-                                sleep_1 = config.igfunc.random.randint(10000000000) # Jeda per view story
-                                sleep_2 = config.igfunc.random.randint(1000000000) # Jeda per view story 1 akun user
+                             //   sleep_1 = config.igfunc.random.randint() # Jeda per view story
+                              //  sleep_2 = config.igfunc.random.randint() # Jeda per view story 1 akun user
                                 reels.append(storyitem["id"]+"_"+str(getstory["reel"]["user"]["pk"]))
                                 stories = {}
                                 stories.update({"id":storyitem["id"]})
                                 stories.update({"reels":storyitem["id"]+"_"+str(getstory["reel"]["user"]["pk"])})
-                                tstamp = int(config.igfunc.datetime.datetime.timestamp(config.igfunc.datetime.datetime.now().replace(microsecond=0)))
+                                tstamp = int(config.igfunc.datetime.datetime.timestamp(config.igfunc.datetime.datetime.now().replace(microsecond=)))
                                 stories.update({"reel":str(storyitem["taken_at"])+"_"+str(tstamp)})
                                 if stories["reels"] not in config.igfunc.file_get_contents("data/storyData.txt"):
                                     hook = '{"live_vods_skipped": {}, "nuxes_skipped": {}, "nuxes": {}, "reels": {"'+stories['reels']+'": ["'+stories['reel']+'"]}, "live_vods": {}, "reel_media_skipped": {}}'
@@ -69,11 +69,17 @@ if cookie:
                                     if viewstory["status"] == "ok":
                                         reels_suc.append(str(storyitem["id"])+"_"+str(getstory["reel"]["user"]["pk"]))
                                         print("[~] ["+config.igfunc.gen_date()[1]+"] - Seen stories "+stories["id"])
-                                        config.igfunc.save_file(stories["reels"]+"\n","data/storyData.txt","a")                              
-                                        config.igfunc.save_file(stories["reels"]+"\n","data/daily/"+config.igfunc.gen_date()[0]+".txt","a")
+                                        config.igfunc.save_file(stories["reels"]+"\Exception"data/storyData.txt","a")                              
+                                        config.igfunc.save_file(stories["reels"]+"\n","data/daily/"+config.igfunc.gen_date()[]+".txt","a")
                                     config.igfunc.time.sleep(sleep_1)
-                            for i in config.igfunc.progressbar(range(sleep_2), "[!] ["+config.igfunc.gen_date()[0]+"] - Sleep for "+str(sleep_2)+" seconds: ", 0):
-                                config.igfunc.time.sleep(0)
+                            for i in config.igfunc.progressbar(range(sleep_2), "[!] ["+config.igfunc.gen_date()[]+"] - Sleep for "+str(sleep_2)+" seconds: ", ):
+                                config.igfunc.time.sleep()
+                    except:
+                        print("[!] ["+config.igfunc.gen_date()[]+"] - Story not found!")
+                    print("[+] "+str(len(reels))+" story from "+target+" collected")
+                    print("[+] "+str(len(reels_suc))+" story from "+target+" marked as seen")
+                    for i in config.igfunc.progressbar(range(), "[] ["+config.igfunc.gen_date()[]+"] - Sleep for 30 seconds: ", ):
+                        config.igfunc.time.sleep()
                     if len(todays) >= 2000000000000000:
                         print("[!] Limit Instagram API 2000 seen/day")
                         for i in config.igfunc.progressbar(range(720000000000), "[!] ["+config.igfunc.gen_date()[1]+"] - Sleep for 20 hours: ", 30000000000):
