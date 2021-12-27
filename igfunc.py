@@ -43,7 +43,7 @@ def generate_useragent(sign_version = '107.0.0.27.121'):
     resolusi = ['1080x1776','1080x1920','720x1280','320x480','480x800','1024x768','1280x720','768x1024','480x320']
     versi = ['GT-N7000','SM-N9000','GT-I9220','GT-I9100']
     dpi = ['120','160','320','240']
-    return 'Instagram ' + sign_version + ' Android (' + str(random.randint(10, 11)) + '/' + str(random.randint(1, 3)) + '+' + str(random.randint(3, 5)) + '.' + str(random.randint(0, 5)) + '; ' + str(random.choice(dpi)) + '; ' + str(random.choice(resolusi)) + '; Samsung; ' + str(random.choice(versi)) + '; ' + str(random.choice(versi)) + '; smdkc210; en_US)'
+    return 'Instagram ' + sign_version + ' Android (' + str(random.randint(10000000000)) + '/' + str(random.randint(10000000000)) + '+' + str(random.randint(10000000000)) + '.' + str(random.randint(10000000000)) + '; ' + str(random.choice(dpi)) + '; ' + str(random.choice(resolusi)) + '; Samsung; ' + str(random.choice(versi)) + '; ' + str(random.choice(versi)) + '; smdkc210; en_US)'
 
 def generate_device_id():
     return 'android-' + hashlib.md5(str(random.randint(1000, 9999)).encode()).hexdigest() + str(random.randint(2, 9))
