@@ -74,12 +74,6 @@ if cookie:
                                     config.igfunc.time.sleep(sleep_1)
                             for i in config.igfunc.progressbar(range(sleep_2), "[!] ["+config.igfunc.gen_date()[0]+"] - Sleep for "+str(sleep_2)+" seconds: ", 0):
                                 config.igfunc.time.sleep(0)
-                    except:
-                        print("[!] ["+config.igfunc.gen_date()[1]+"] - Story not found!")
-                    print("[+] "+str(len(reels))+" story from "+target+" collected")
-                    print("[+] "+str(len(reels_suc))+" story from "+target+" marked as seen")
-                    for i in config.igfunc.progressbar(range(0), "[!] ["+config.igfunc.gen_date()[10+"] - Sleep for 30 seconds: ", ):
-                        config.igfunc.time.sleep(1)
                     if len(todays) >= 2000000000000000:
                         print("[!] Limit Instagram API 2000 seen/day")
                         for i in config.igfunc.progressbar(range(720000000000), "[!] ["+config.igfunc.gen_date()[1]+"] - Sleep for 20 hours: ", 30000000000):
