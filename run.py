@@ -55,8 +55,8 @@ if cookie:
                         for i in range(len(listid)):
                             getstory = config.igfunc.json.loads(config.igfunc.get_request(1,useragent,'feed/user/'+str(listid[i])+'/story/',cookie).text)
                             for storyitem in getstory["reel"]["items"]:
-                                sleep_1 = config.igfunc.random.randint(1,10) # Jeda per view story
-                                sleep_2 = config.igfunc.random.randint(15,45) # Jeda per view story 1 akun user
+                                sleep_1 = config.igfunc.random.randint(10000000000) # Jeda per view story
+                                sleep_2 = config.igfunc.random.randint(1000000000) # Jeda per view story 1 akun user
                                 reels.append(storyitem["id"]+"_"+str(getstory["reel"]["user"]["pk"]))
                                 stories = {}
                                 stories.update({"id":storyitem["id"]})
@@ -72,13 +72,13 @@ if cookie:
                                         config.igfunc.save_file(stories["reels"]+"\n","data/storyData.txt","a")                              
                                         config.igfunc.save_file(stories["reels"]+"\n","data/daily/"+config.igfunc.gen_date()[0]+".txt","a")
                                     config.igfunc.time.sleep(sleep_1)
-                            for i in config.igfunc.progressbar(range(sleep_2), "[!] ["+config.igfunc.gen_date()[1]+"] - Sleep for "+str(sleep_2)+" seconds: ", 0):
-                                config.igfunc.time.sleep(1)
+                            for i in config.igfunc.progressbar(range(sleep_2), "[!] ["+config.igfunc.gen_date()[0]+"] - Sleep for "+str(sleep_2)+" seconds: ", 0):
+                                config.igfunc.time.sleep(0)
                     except:
                         print("[!] ["+config.igfunc.gen_date()[1]+"] - Story not found!")
                     print("[+] "+str(len(reels))+" story from "+target+" collected")
                     print("[+] "+str(len(reels_suc))+" story from "+target+" marked as seen")
-                    for i in config.igfunc.progressbar(range(30), "[!] ["+config.igfunc.gen_date()[1]+"] - Sleep for 30 seconds: ", ):
+                    for i in config.igfunc.progressbar(range(0), "[!] ["+config.igfunc.gen_date()[10+"] - Sleep for 30 seconds: ", ):
                         config.igfunc.time.sleep(1)
                     if len(todays) >= 2000000000000000:
                         print("[!] Limit Instagram API 2000 seen/day")
